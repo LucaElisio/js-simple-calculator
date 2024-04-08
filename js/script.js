@@ -20,6 +20,9 @@ let result = 0;
 let num1 = "";
 // Dichiaro variabile globale per il secondo numero
 let num2;
+// Dichiaro variabile globale per l'operatore
+let operator = "";
+
 
 // Inserisco il risultato in pagina
 // Trovo elemento result in pagina
@@ -47,7 +50,29 @@ for (let i = 1; i <= 10; i++) {
         
         // Stampo il risultato sul display
         resultElem.innerHTML = num1;
-    })
+    });
 
+};
+
+// Aggiungo event listener a tutti gli operatori
+// Cerco elemento operations in pagina
+const operationsElem = document.querySelector(".operations");
+console.log(operationsElem);
+
+for (let i = 2; i <= 5; i++) {
+    
+    // Cerco bottone in pagina
+    const opElem = document.querySelector(`.operations button:nth-child(${i})`);
+    console.log(opElem);
+
+    // Aggiungo evet listener a ogni bottone
+    opElem.addEventListener("click", function() {
+
+        // Salvo in variabile l'innerhtml del bottone cliccato
+        operator = opElem.innerHTML;
+        console.log(operator);
+
+        // Imposto display vuoto
+        resultElem.innerHTML = "";
+    });
 }
-

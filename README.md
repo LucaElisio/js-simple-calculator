@@ -6,3 +6,13 @@
         - Cerco bottone in pagina (document.querySelector(".numbers button:nth-child(i)"));
 2. quando si clicca su un numero, concatenarlo al numero
     - [ ] Concateno il valore del bottone corrente trasformato in stringa ad una variabile
+
+**Milestone 2**
+1. aggiungere event listener a tutti gli operatori
+    - [ ] Cerco elemento operations in pagina (operationsElem)
+    - [ ] Creo ciclo for che scorre tutti gli operatori
+        - i = 1; i <= 5; i++
+        - Cerco bottone in pagina
+2. quando si clicca su un operatore, salvare l'operatore cliccato e il primo operando, quindi resettare il numero in alto
+    - [ ] salvo l'inner html del bottone corrente
+    - [ ] imposto l'innerhtml del risultato come stringa vuota

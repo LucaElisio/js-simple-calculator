@@ -30,12 +30,14 @@ header {
 
 /* DISPLAY */
 .result{
+    height: 40px;
     background-color: #244445;
     color: #ffffff;
     text-align: right;
-    padding: 10px;
+    padding: 0 10px;
     font-family: 'Seven Segment', sans-serif;
     font-size: 15px;
+    line-height: 40px;
 }
 
 /* KEYBOARD */
