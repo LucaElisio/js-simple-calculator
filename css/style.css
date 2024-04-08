@@ -1,0 +1,101 @@
+/* RESET */
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+}
+
+/* main container style */
+.calculator{
+    width: 300px;
+    /* background-color: #eeecae; */
+    margin: 200px auto;
+    border-radius: 10px;
+    box-shadow: -2px 2px 5px black;
+    background-image: linear-gradient(270deg, #fefcc7 0%, #bfbd8e 100%);
+    
+}
+
+/* Header */
+header {
+    /* background-color: #eeecae; */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    text-align: center;
+}
+
+/* DISPLAY */
+.result{
+    background-color: #244445;
+    color: #ffffff;
+    text-align: right;
+    padding: 10px;
+    font-family: 'Seven Segment', sans-serif;
+    font-size: 15px;
+}
+
+/* KEYBOARD */
+.keyboard{
+    display: flex;
+    padding: 1.5em;
+}
+
+/* Numbers */
+.numbers{
+    width: 75%;
+    display: flex;
+    justify-content: space-between;
+
+    flex-wrap: wrap;
+
+    /* debug */
+    /* height: 100px;
+    background-color: firebrick; */
+}
+
+.numbers button{
+    width: calc(100% / 3 - 10px);
+    margin-right: 10px;
+    background-color: #50A76F;
+    
+}
+
+/* Operations */
+.operations{
+    display: flex;
+    flex-wrap: wrap;
+    width: 25%;
+}
+
+.operations button{
+    background-color: #244445;
+    width: 100%;
+}
+
+/* Common button */
+button{
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 0;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 5px;
+    box-shadow: -1px 1px 2px black;
+}
+
+button.zero {
+    flex-grow: 1 ;
+}
+
+button.red{
+    background-color: #A75050;
+}
+
+button:hover {
+    background-color: gray;
+}
