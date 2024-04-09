@@ -17,8 +17,8 @@
 // Dichiaro variabile globale per il risultato
 let displayResult = 0;
 // Dichiaro variabile globale per il primo numero
-let num1 = "";
-// Dichiaro variabile globale per il secondo numero
+let num = "";
+// Dichiaro variabile globale di appoggio
 let num2 = "";
 // Dichiaro variabile globale per l'operatore
 let operator = "";
@@ -44,11 +44,12 @@ for (let i = 0; i < keyElem.length; i++) {
 // Funzione keyClick
 function keyClick () {
     const keyElemValue = this.innerText;
-    num1 += keyElemValue;
-    console.log(num1, typeof num1);
+    num += keyElemValue;
+    console.log(num, typeof num);
 
     // Stampo in display
-    displayElem.innerHTML = num1;
+    displayElem.innerHTML = num;
+    
 }
 
 // Aggiungo event listener a tutti gli operatori
@@ -56,14 +57,46 @@ function keyClick () {
 const opElem = document.querySelectorAll(".op");
 console.log(opElem);
 
+
 for (let i = 0; i < opElem.length; i++) {
     const curElem = opElem[i];
     curElem.addEventListener("click", opClick);
 }
 
 // Funzione opClick
-function opClick () {
-    const opElemValue = this.innerText
-    console.log(opElemValue);
+function opClick() {
+    operator = this.innerText;
+    console.log(operator);
     displayElem.innerHTML = "";
+    num2 = num;
+    console.log(num2);
+    num = "";
+}
+
+// Aggiungo event listener al pulsante =
+// Cerco elemento in pagina
+const resultElem = document.querySelector(".result");
+resultElem.addEventListener("click", printResult);
+
+// Funzione printResult
+function printResult() {
+    num = parseInt(num)
+    num2 = parseInt(num2)
+    switch (operator) {
+        case "+":
+            displayResult = num2 + num;
+            break;
+        case "-":
+            displayResult = num2 - num;
+            break;
+        case "&#215;":
+            displayResult = num2 * num;
+            break;
+        case "&#247;":
+            displayResult = num2 / num;
+            break;
+    }
+
+    // Stampo nel display il risultato
+    displayElem.innerHTML = displayResult;
 }
