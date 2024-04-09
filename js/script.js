@@ -100,3 +100,15 @@ function printResult() {
     // Stampo nel display il risultato
     displayElem.innerHTML = displayResult;
 }
+
+// Aggiungo event listener al pulsante canc
+// Cerco elemento in pagina
+const cancElem = document.querySelector(".canc");
+cancElem.addEventListener("click", canc);
+
+function canc () {
+    num = "";
+    num2 = "";
+    displayResult = 0;
+    displayElem.innerHTML = displayResult;
+}
