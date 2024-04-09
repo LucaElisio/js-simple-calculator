@@ -1,18 +1,19 @@
 **Milestone 1**
 1. aggiungere event listener a tutti i numeri (0-9)
-    - [ ] Cerco l'elemento numbers in pagina (numbersElem)
-    - [ ] creo ciclo for che scorre tutti i numeri
-        - i = 1; i <= 10; i++
-        - Cerco bottone in pagina (document.querySelector(".numbers button:nth-child(i)"));
-2. quando si clicca su un numero, concatenarlo al numero
-    - [ ] Concateno il valore del bottone corrente trasformato in stringa ad una variabile
+    - [x] Cerco gli elementi con classe keynum in pagina
+    - [x] creo ciclo for che scorre tutti gli elementi della nodelist
+        - [x] all'elemto corrente assegno l'eventlistener
+2. quando si clicca su un numero, concatenarlo al numero visualizzato in alto
+    - [x] Definisco funzione dell'eventlistener
+    - [x] Concateno il valore del bottone corrente trasformato in stringa ad una variabile
+    - [x] Stampo sul display
 
 **Milestone 2**
 1. aggiungere event listener a tutti gli operatori
-    - [ ] Cerco elemento operations in pagina (operationsElem)
-    - [ ] Creo ciclo for che scorre tutti gli operatori
-        - i = 1; i <= 5; i++
-        - Cerco bottone in pagina
+    - [x] Cerco elementi con classe op in pagina
+    - [x] creo ciclo for che scorre gli elementi op della nodelist
+        - [x] all'elemento corrente assegno eventlister
 2. quando si clicca su un operatore, salvare l'operatore cliccato e il primo operando, quindi resettare il numero in alto
-    - [ ] salvo l'inner html del bottone corrente
-    - [ ] imposto l'innerhtml del risultato come stringa vuota
+    - [x] Definisco funzione dell'event listener
+    - [x] Salvo l'innerhtml dell'elemento cliccato in variabile
+    - [x] Resetto il numero sul display

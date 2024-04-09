@@ -15,64 +15,55 @@
 
 
 // Dichiaro variabile globale per il risultato
-let result = 0;
+let displayResult = 0;
 // Dichiaro variabile globale per il primo numero
 let num1 = "";
 // Dichiaro variabile globale per il secondo numero
-let num2;
+let num2 = "";
 // Dichiaro variabile globale per l'operatore
 let operator = "";
 
 
-// Inserisco il risultato in pagina
 // Trovo elemento result in pagina
-const resultElem = document.querySelector(".result");
+const displayElem = document.querySelector(".display");
 // Stampo il risultato in pagina
-resultElem.innerHTML = result;
+displayElem.innerHTML = displayResult;
 
 // Aggiungo event listener a tutti i numeri
-// Cerco elemento numbers in pagina
-const numbersElem = document.querySelector(".numbers");
-console.log(numbersElem);
+// Cerco bottone numerico in pagina e salvo in variabile
+const keyElem = document.querySelectorAll(".keynum");
+console.log(keyElem);
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 0; i < keyElem.length; i++) {
 
-    // Cerco bottone numerico in pagina e salvo il valore in variabile
-    const numElem = document.querySelector(`.numbers button:nth-child(${i})`);
-    console.log(numElem);
-
-    // Al click, concateno il valore del bottone cliccato in stringa in una variabile
-    numElem.addEventListener("click", function() {
-        // Salvo il valore del bottone corrente
-        const numElemValue = numElem.innerHTML;
-        num1 += numElemValue.toString();
-        console.log(num1);
-        
-        // Stampo il risultato sul display
-        resultElem.innerHTML = num1;
-    });
-
+    // Salvo in variabile il numero corrente
+    const curElem = keyElem[i];
+    curElem.addEventListener("click", keyClick);
 };
 
+// Funzione keyClick
+function keyClick () {
+    const keyElemValue = this.innerText;
+    num1 += keyElemValue;
+    console.log(num1, typeof num1);
+
+    // Stampo in display
+    displayElem.innerHTML = num1;
+}
+
 // Aggiungo event listener a tutti gli operatori
-// Cerco elemento operations in pagina
-const operationsElem = document.querySelector(".operations");
-console.log(operationsElem);
+// Cerco bottone operatore in pagina e salvo in variabile
+const opElem = document.querySelectorAll(".op");
+console.log(opElem);
 
-for (let i = 2; i <= 5; i++) {
-    
-    // Cerco bottone in pagina
-    const opElem = document.querySelector(`.operations button:nth-child(${i})`);
-    console.log(opElem);
+for (let i = 0; i < opElem.length; i++) {
+    const curElem = opElem[i];
+    curElem.addEventListener("click", opClick);
+}
 
-    // Aggiungo evet listener a ogni bottone
-    opElem.addEventListener("click", function() {
-
-        // Salvo in variabile l'innerhtml del bottone cliccato
-        operator = opElem.innerHTML;
-        console.log(operator);
-
-        // Imposto display vuoto
-        resultElem.innerHTML = "";
-    });
+// Funzione opClick
+function opClick () {
+    const opElemValue = this.innerText
+    console.log(opElemValue);
+    displayElem.innerHTML = "";
 }
